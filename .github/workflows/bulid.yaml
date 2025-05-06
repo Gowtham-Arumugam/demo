@@ -9,7 +9,7 @@ jobs:
         steps:
         - name: check release version
           id: check_release_version
-          run: ${{ env.RELEASE_VERSION }}
+          run: echo ${{ env.RELEASE_VERSION }}
         - name: Checkout code
           uses: actions/checkout@v2
     
