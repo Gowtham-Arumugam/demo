@@ -8,8 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: see the action ref value
-          run: ${{github.action_ref}}
-
+          run: echo ${{github.action_ref}}
+        - name: see the value 2
+          run: echo ${{ env.REPO_NAME }}-${{ env.VERSION }}
 
         - name: Checkout code
           uses: actions/checkout@v2
