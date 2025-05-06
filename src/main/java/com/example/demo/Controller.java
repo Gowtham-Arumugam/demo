@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Controller {
     @GetMapping("/home")
     public String sayhi() {
-        return "Hello World!";
+        return "Hello World! From " + System.getenv("HOSTNAME");
     }
     //get method all enveromient variables
     @GetMapping("/env")
