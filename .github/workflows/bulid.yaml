@@ -7,6 +7,10 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
+        - name: see the action ref value
+          run: ${{github.action_ref}}
+
+
         - name: Checkout code
           uses: actions/checkout@v2
     
