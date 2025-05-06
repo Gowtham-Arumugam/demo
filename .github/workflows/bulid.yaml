@@ -16,8 +16,12 @@ jobs:
           with:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '21'
-        - name: Run tests
-          run: mvn test & package 
+        - name: Run tests 
+          run: mvn test
+        - name: Build project
+          run: mvn package
+        - name: check targer directory
+          run: ls -l target
         - name: Build docker image
           run: docker build -t first-java-app:latest .
         - name: list docker images
