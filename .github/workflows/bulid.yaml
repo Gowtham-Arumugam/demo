@@ -23,7 +23,14 @@ jobs:
         - name: check targer directory
           run: ls -l target
         - name: Build docker image
-          run: docker build -t first-java-app:latest .
+          run: docker build -t gowthamarumugam/first-java-app:latest .
         - name: list docker images
           run: docker images
+        - name: Login to Docker Hub
+          uses: docker/login-action@v3
+          with:
+           username: ${{ vars.DOCKERHUB_USERNAME }}
+           password: ${{ secrets.DOCKERHUB_TOKEN }}
+        - name: push docker image to docker hub
+          run: docker push gowthamarumugam/first-java-app:latest
         
