@@ -17,7 +17,7 @@ jobs:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '21'
         - name: Run tests
-          run: mvn test
+          run: mvn test & compile 
         - name: Build docker image
           run: docker build -t first-java-app:latest .
         - name: list docker images
