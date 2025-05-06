@@ -19,7 +19,7 @@ jobs:
         - name: Run tests
           run: mvn test
         - name: Build docker image
-          run: docker build -t First-java-app:latest .
+          run: docker build -t first-java-app:latest .
         - name: list docker images
           run: docker images
         
