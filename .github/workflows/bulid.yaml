@@ -29,7 +29,7 @@ jobs:
            password: ${{ secrets.DOCKERHUB_TOKEN }}
         - name: push docker image to docker hub
           run: |
-            docker tag ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:${{github.action_ref}}
+            docker tag ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:${{ env.REPO_NAME }}-${{ env.VERSION }}
             docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest
-            docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:${{github.action_ref}}
+            docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:${{ env.REPO_NAME }}-${{ env.VERSION }}
         
