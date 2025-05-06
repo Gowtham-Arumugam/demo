@@ -19,8 +19,7 @@ public class Controller {
     }
     //get to error page
     @GetMapping("/crash")
-    public String error() {
+    public void error() {
         System.exit(1);
-        return "Error! From " + System.getenv("HOSTNAME");
     }
 }
