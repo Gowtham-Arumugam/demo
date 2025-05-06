@@ -17,6 +17,6 @@ class DemoApplicationTests {
 	//add another dummy test
 	@Test
 	void anotherDummyTest() {
-		assert true;
+		assert false;
 	}
 }

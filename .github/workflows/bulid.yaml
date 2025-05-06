@@ -13,6 +13,8 @@ jobs:
           with:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '21'
+        - name: Test with Maven
+          run: mvn test
         - name: Build project
           run: mvn clean package
         - name: Build docker image
