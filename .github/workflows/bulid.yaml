@@ -7,7 +7,14 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-
+        - name: check release version
+          id: check_release_version
+          run: |
+            if [[ "${{ github.ref }}" == "refs/tags/"* ]]; then
+              echo "RELEASE_VERSION=${{ github.ref }}" >> $GITHUB_ENV
+            else
+              echo "RELEASE_VERSION=latest" >> $GITHUB_ENV
+            fi
         - name: Checkout code
           uses: actions/checkout@v2
     
