@@ -30,5 +30,5 @@ jobs:
           run: |
             docker tag ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:v${{ github.run_number }}
             docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:v${{ github.run_number }}
-            docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest
+            docker push ${{ vars.DOCKERHUB_USERNAME }}/first-java-app:latest 
         
