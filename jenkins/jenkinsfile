@@ -10,8 +10,8 @@ pipeline {
         stage('Hello') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'gowthamarumugam', passwordVariable: 'password', usernameVariable: 'username')]) {
-                    bat "docker login -u ${username} -p ${password}"
-                    bat "docker push ${username}/first-java-app"
+                 //   bat "docker login -u ${username} -p ${password}"
+                   // bat "docker push ${username}/first-java-app"
                     echo "${env.BUILD_NUMBER}"
                 }
                 
