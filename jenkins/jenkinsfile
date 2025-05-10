@@ -15,7 +15,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'gowthamarumugam', passwordVariable: 'password', usernameVariable: 'username')]) {
                    bat """
                    docker build -t ${username}/first-java-app:latest .
-                   docker tag ${username}/first-java-app:latest ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins
+                   docker tag ${username}/first-java-app:latest ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins
                    docker login -u ${username} -p ${password}
                    docker push ${username}/first-java-app
                    docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins
