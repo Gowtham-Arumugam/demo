@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('mvn test and package') {
             tools {
-                maven 'Maven-3'
+                maven 'maven-3'
             }
             steps {
                 bat 'mvn clean package '
