@@ -17,7 +17,7 @@ pipeline {
                    bat "docker tag ${username}/first-java-app:latest ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins"
                    bat "docker login -u ${username} -p ${password}"
                    bat "docker push ${username}/first-java-app"
-                   bat "docker push ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins"
+                   bat "docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins"
                 }
             }
         }
