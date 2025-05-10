@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('mvn test and package') {
+            steps {
+                bat 'mvn clean package '
+            }
+        }
         stage('Hello') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'gowthamarumugam', passwordVariable: 'password', usernameVariable: 'username')]) {
