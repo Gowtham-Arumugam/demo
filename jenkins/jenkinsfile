@@ -13,11 +13,13 @@ pipeline {
         stage('Bulid and Push Docker Image') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'gowthamarumugam', passwordVariable: 'password', usernameVariable: 'username')]) {
-                   bat "docker build -t ${username}/first-java-app:latest ."
-                   bat "docker tag ${username}/first-java-app:latest ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins"
-                   bat "docker login -u ${username} -p ${password}"
-                   bat "docker push ${username}/first-java-app"
-                   bat "docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins"
+                   bat """
+                   docker build -t ${username}/first-java-app:latest .
+                   bat "docker tag ${username}/first-java-app:latest ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins
+                   bat "docker login -u ${username} -p ${password}
+                   bat "docker push ${username}/first-java-app
+                   bat "docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins
+                """
                 }
             }
         }
