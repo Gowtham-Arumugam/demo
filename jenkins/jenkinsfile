@@ -19,7 +19,6 @@ pipeline {
                    bat "docker push ${username}/first-java-app"
                    bat "docker push ${username}/first-java-app:${env.BUILD_NUMBER}-jenkins"
                 }
-                
             }
         }
     }
