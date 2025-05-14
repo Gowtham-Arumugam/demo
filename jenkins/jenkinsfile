@@ -21,16 +21,6 @@ pipeline {
                    docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins
                 """
 
-
-
-
-
-
-
-
-
-
-                
                 }
             }
         }
