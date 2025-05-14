@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('mvn test and package') {
             tools {
@@ -20,7 +19,6 @@ pipeline {
                    docker push ${username}/first-java-app
                    docker push ${username}/first-java-app:v${env.BUILD_NUMBER}-jenkins
                 """
-
                 }
             }
         }
